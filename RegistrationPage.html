@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbd5e2; /* Light pink background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140vh;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        h1 {
+            color: #d81b60; /* Dark pink color for heading */
+            text-align: center;
+        }
+
+      
+
+        label {
+            color: #000; /* Black color for labels */
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input {
+            width: calc(100% - 20px); /* Adjust the width of the input fields */
+            padding: 8px;
+            border: 1px solid #d81b60; /* Dark pink border for input fields */
+            border-radius: 4px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #d81b60; /* Dark pink color for button */
+            color: white;
+            width: calc(100% - 20px); /* Adjust the width of the button */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #aa1155; /* Darker pink color on hover for button */
+        }
+
+        a {
+            color: #d81b60; /* Dark pink color for links */
+            text-align: center;
+            display: block;
+            margin-top: 8px;
+        }
+
+        a:hover {
+            color: #aa1155; /* Darker pink color on hover for links */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Registration Page</h1>
+              <form action="{{url_for('registration')}}" method="POST" enctype="multipart/form-data">
+            <div>{{ message }}</div><br>
+            <label for="username">User Name:</label>
+            <input id="username" name="username" type="text" class="input" placeholder="User Name" autocomplete="off" required/>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" class="input" placeholder="Password" autocomplete="off" required/>
+            <label for="firstname">First Name:</label>
+            <input id="firstname" name="firstname" type="text" class="input" placeholder="First Name" autocomplete="off" required/>
+            <label for="lastname">Last Name:</label>
+            <input id="lastname" name="lastname" type="text" class="input" placeholder="Last Name" autocomplete="off" required/>
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="text" class="input" placeholder="Email" autocomplete="off" required/>
+            <label for="textfile">Upload File:</label>
+            <input type="file" id="textfile" name="textfile" class="input" required/>
+            <button type="submit">Register</button>
+        </form>
+        <a href="{{url_for('login')}}">Already have an account? Login here</a>
+    </div>
+</body>
+</html>

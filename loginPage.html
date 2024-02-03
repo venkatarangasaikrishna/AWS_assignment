@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightpink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div align="center">
+        <div><h1>Welcome to the Login Page</h1></div>
+        <div>
+            <form action="{{url_for('login')}}" method="POST">
+                <div>{{ message }}</div> <br><br>
+                <label><b>User Name :</b> </label><input id="username" name="username" type="text" placeholder="Your User Name" autocomplete="off"/> <br><br>
+                <label><b>Password : </b></label><input id="password" name="password" type="password" placeholder="Your Password" autocomplete="off"/> <br><br>
+                <button id="submit" name="submit"><b>Sign in</b></button>
+            </form>
+        </div>
+        <p><b>New here? Click <a href="{{url_for('registration')}}">here to create an account</b></a></p>
+    </div>
+</body>
+</html>
